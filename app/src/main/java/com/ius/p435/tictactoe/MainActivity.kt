@@ -34,7 +34,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val topLeftButton = findViewById<Button>(R.id.top_left)
-        topLeftButton.setOnClickListener {onButtonClick(topLeftButton)}
+        val topMidButton = findViewById<Button>(R.id.top_mid)
+        val topRightButton = findViewById<Button>(R.id.top_right)
+
+        topLeftButton.setOnClickListener { onButtonClick(topLeftButton) }
+        topMidButton.setOnClickListener { onButtonClick(topMidButton) }
+        topRightButton.setOnClickListener { onButtonClick(topRightButton) }
+
+        val midLeftButton = findViewById<Button>(R.id.mid_left)
+        val midMidButton = findViewById<Button>(R.id.mid_mid)
+        val midRightButton = findViewById<Button>(R.id.mid_right)
+
+        midLeftButton.setOnClickListener { onButtonClick(midLeftButton) }
+        midMidButton.setOnClickListener { onButtonClick(midMidButton) }
+        midRightButton.setOnClickListener { onButtonClick(midRightButton) }
+
+        val botLeftButton = findViewById<Button>(R.id.bot_left)
+        val botMidButton = findViewById<Button>(R.id.bot_mid)
+        val botRightButton = findViewById<Button>(R.id.bot_right)
+
+        botLeftButton.setOnClickListener { onButtonClick(botLeftButton) }
+        botMidButton.setOnClickListener { onButtonClick(botMidButton) }
+        botRightButton.setOnClickListener { onButtonClick(botRightButton) }
+
     }
 
     private fun onButtonClick(button: Button) {
@@ -44,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 button.text = "X"
             }
             else {
-                button.text = "Y"
+                button.text = "O"
             }
 
             turnTracker.iterateTurn()
